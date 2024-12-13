@@ -35,7 +35,7 @@ const History = (props: InferGetServerSidePropsType<typeof getServerSideProps>) 
           {years.map((year) => (
             <Menu.Item
               key={year}
-              href={`/history/${year}`}
+              href={`/about-us/history/${year}`}
               current={year === defaultYear}
             >
               {year}

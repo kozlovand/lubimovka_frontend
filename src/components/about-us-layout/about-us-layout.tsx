@@ -52,7 +52,12 @@ export const AboutUsLayout: FC<AboutUsLayoutProps> = (props) => {
         >
           {aboutUsNavigationItems.filter(item => permissions && permissions[item.id])
             .map((item) => {
-              const current = router.asPath === item.href;
+              let current;
+              if (item.id === 'about-us') {
+                current = router.asPath === item.href;
+              } else {
+                current = router.asPath.startsWith(item.href);
+              }
 
               return (
                 <Menu.Item
